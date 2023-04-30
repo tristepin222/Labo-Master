@@ -34,36 +34,36 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+which java
 
 [OUTPUT]
-//TODO
+/c/Program Files/Java/jdk-20.0.1/bin/java
 ```
 
 * [ ] Which current compiler is installed (JDK) ?
 
-```
-[INPUT]
-//TODO
+<pre><code><strong>[INPUT]
+</strong>javac --version
 
 [OUTPUT]
-//TODO
-```
+javac 20.0.1
+</code></pre>
 
 * [ ] Which current runtime is installed (JRE) ?
 
 ```
 [INPUT]
-//TODO
+java --version
 
 [OUTPUT]
-//TODO
+openjdk 20.0.1 2023-04-18
+OpenJDK Runtime Environment (build 20.0.1+9-29)
+OpenJDK 64-Bit Server VM (build 20.0.1+9-29, mixed mode, sharing)
 ```
 
 * [ ] Do we need to install the java virtual machine (JVM) ?
 
 ```
-//TODO
 ```
 
 ### Install the Open JDK
@@ -75,12 +75,9 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * Then get the target url (cookies.
 {% endhint %}
 
-```
-[INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
+```powershell
+ps> Invoke-WebRequest "https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_windows-x64_bin.zip" ^
+    -OutFile "openjdk-20.0.1_windowsx64_bin.zip"
 ```
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Powershell output during sdk download process</p></figcaption></figure>
@@ -91,22 +88,25 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 * Generate your local hash based on the archive downloaded ([help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3))
 * Compare both hashes...
 
+````powershell
 ```
 [INPUT]
-//TODO
+Get-FileHash .\openjdk-20.0.1_windowsx64_bin.zip -Algorithm SHA256 | Select-Object Has
 
-[OUTPUT]
-//TODO
 ```
+[OUTPUT]
+Hash
+----
+31CA4A8CBDEA1DA7FB441194E756DD1ADBEDFC05BD1135A1ECC46B4288EA8942
+````
 
 #### Unzip jdk archive
 
 ```
 [INPUT]
-//TODO
+Expand-Archive -Path .\openjdk-20.0.1_windowsx64_bin.zip -DestinationPath .
 
 [OUTPUT]
-//TODO
 ```
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Powershell output during unzip process</p></figcaption></figure>
@@ -115,10 +115,11 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+//need to run cmder in admin mode
+mv jdk-20.0.1\ "C:\Program Files\Java"
 
 [OUTPUT]
-//TODO
+none
 ```
 
 #### Set environment variables
@@ -131,10 +132,17 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+//need to run cmder in admin mode
+setx /m JAVA_HOME "C:\Program Files\Java\jdk-20.0.1"
+
+SUCCESS: Specified value was saved.
+
+//restart cmder
+[OUTPUT]
+echo %JAVA_HOME%
 
 [OUTPUT]
-//TODO
+C:\Program Files\Java\jdk-20.0.1
 ```
 
 * [ ] Update PATH environment variable
@@ -147,38 +155,53 @@ echo %PATH% > path.back
 
 ```
 [INPUT]
-//TODO
+//need to run cmder in admin mode
+setx /m PATH "%path%;%JAVA_HOME%
 
-[OUTPUT]
-//TODO
 ```
 
 * [ ] Check the variables settings
 
 ```
 [INPUT]
-//TODO
+java --version
 
 [OUTPUT]
-//TODO
+
 ```
 
 ## Build and test the project
 
 ```
 [INPUT]
-//TODO
+.\mvnw.cmd spring-boot:run
 
 [OUTPUT]
-//TODO
+[INFO] Attaching agents: []
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 3.0.4
+
+[..]
+2023-04-30T22:11:03.600+02:00  INFO 34888 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+
+[..]
+
 ```
 
 ### Result expected 
 
-```
-[INPUT]
-//TODO
+<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
-[OUTPUT]
-//TODO
-```
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
