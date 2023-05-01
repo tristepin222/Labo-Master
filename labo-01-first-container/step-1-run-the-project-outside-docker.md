@@ -15,16 +15,28 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 <!---->
 
 * [ ] What type of application is it ?
+    ```
+    Java application 
+    ```
 * [ ] Which database engine is used ?
+    ```
+    H2 engine
+    ```
 * [ ] Do we need to install the package manager _MAVEN_ before building the project ?
+    ```
+    No, but it's recommended
+    ```
 
 <!---->
 
 * Inspect the dependencies (pom.xml)
-
+    
 <!---->
 
 * [ ] Which version of Java should compatible with the code provided ?
+    ```
+    Java 17
+    ```
 
 ## Setup Java components
 
@@ -34,35 +46,38 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+where java
 
 [OUTPUT]
-//TODO
+C:\Program Files (x86)\Common Files\Oracle\Java\javapath\java.exe
 ```
 
 * [ ] Which current compiler is installed (JDK) ?
 
 ```
 [INPUT]
-//TODO
+javac -version
 
 [OUTPUT]
-//TODO
+not recognised
 ```
 
 * [ ] Which current runtime is installed (JRE) ?
 
 ```
 [INPUT]
-//TODO
+java -version
 
 [OUTPUT]
-//TODO
+openjdk version "1.8.0_252"
+OpenJDK Runtime Environment (build 1.8.0_252-8u252-b09-1~19.10-b09)
+OpenJDK 64-Bit Server VM (build 25.252-b09, mixed mode)
 ```
 
 * [ ] Do we need to install the java virtual machine (JVM) ?
 
 ```
+it's an abstract virtual computer, it can be used, but not necessary 
 ```
 
 ### Install the Open JDK
@@ -76,10 +91,10 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+curl "https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_windows-x64_bin.zip" -O "openjdk-20.0.1_windowsx64_bin.zip"
 
 [OUTPUT]
-//TODO
+none
 ```
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Powershell output during sdk download process</p></figcaption></figure>
@@ -92,20 +107,20 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+Get-FileHash .\openjdk-20.0.1_windowsx64_bin.zip -Algorithm SHA256
 
 [OUTPUT]
-//TODO
+31ca4a8cbdea1da7fb441194e756dd1adbedfc05bd1135a1ecc46b4288ea8942
 ```
 
 #### Unzip jdk archive
 
 ```
 [INPUT]
-//TODO
+tar -xf .\openjdk-20.0.1_windowsx64_bin.zip
 
 [OUTPUT]
-//TODO
+none
 ```
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Powershell output during unzip process</p></figcaption></figure>
@@ -114,10 +129,10 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+ mv .\jdk-20.0.1\ "C:\Program Files\Java"
 
 [OUTPUT]
-//TODO
+none
 ```
 
 #### Set environment variables
@@ -130,10 +145,10 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-//TODO
+set JAVA_HOME=C:\Program Files\Java\jdk-20.0.1
 
 [OUTPUT]
-//TODO
+none
 ```
 
 * [ ] Update PATH environment variable
@@ -146,30 +161,42 @@ echo %PATH% > path.back
 
 ```
 [INPUT]
-//TODO
+set PATH=%PATH%;%JAVA_HOME%
 
 [OUTPUT]
-//TODO
+none
 ```
 
 * [ ] Check the variables settings
 
 ```
 [INPUT]
-//TODO
+java -version
 
 [OUTPUT]
-//TODO
 ```
 
 ## Build and test the project
 
 ```
 [INPUT]
-//TODO
+.\mvnw.cmd spring-boot:run
 
 [OUTPUT]
-//TODO
+
+
+              |\      _,,,--,,_
+             /,`.-'`'   ._  \-;;,_
+  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
+ |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
+ |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
+ |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
+ |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
+ |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
+ |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
+ ==================================================================/_/_/_/
+
+:: Built with Spring Boot :: 3.0.4
 ```
 
 
