@@ -34,10 +34,10 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ```
 [INPUT]
-which java
+//TODO
 
 [OUTPUT]
-/c/Program Files/Java/jdk-20.0.1/bin/java
+//TODO
 ```
 
 * [ ] Which current compiler is installed (JDK) ?
@@ -53,12 +53,10 @@ javac 20.0.1
 
 ```
 [INPUT]
-java --version
+//TODO
 
 [OUTPUT]
-openjdk 20.0.1 2023-04-18
-OpenJDK Runtime Environment (build 20.0.1+9-29)
-OpenJDK 64-Bit Server VM (build 20.0.1+9-29, mixed mode, sharing)
+//TODO
 ```
 
 * [ ] Do we need to install the java virtual machine (JVM) ?
@@ -88,25 +86,22 @@ ps> Invoke-WebRequest "https://download.java.net/java/GA/jdk20.0.1/b4887098932d4
 * Generate your local hash based on the archive downloaded ([help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3))
 * Compare both hashes...
 
-````powershell
 ```
 [INPUT]
-Get-FileHash .\openjdk-20.0.1_windowsx64_bin.zip -Algorithm SHA256 | Select-Object Has
+//TODO
 
-```
 [OUTPUT]
-Hash
-----
-31CA4A8CBDEA1DA7FB441194E756DD1ADBEDFC05BD1135A1ECC46B4288EA8942
-````
+//TODO
+```
 
 #### Unzip jdk archive
 
 ```
 [INPUT]
-Expand-Archive -Path .\openjdk-20.0.1_windowsx64_bin.zip -DestinationPath .
+//TODO
 
 [OUTPUT]
+//TODO
 ```
 
 <figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Powershell output during unzip process</p></figcaption></figure>
@@ -115,11 +110,10 @@ Expand-Archive -Path .\openjdk-20.0.1_windowsx64_bin.zip -DestinationPath .
 
 ```
 [INPUT]
-//need to run cmder in admin mode
-mv jdk-20.0.1\ "C:\Program Files\Java"
+//TODO
 
 [OUTPUT]
-none
+//TODO
 ```
 
 #### Set environment variables
@@ -132,17 +126,10 @@ none
 
 ```
 [INPUT]
-//need to run cmder in admin mode
-setx /m JAVA_HOME "C:\Program Files\Java\jdk-20.0.1"
-
-SUCCESS: Specified value was saved.
-
-//restart cmder
-[OUTPUT]
-echo %JAVA_HOME%
+//TODO
 
 [OUTPUT]
-C:\Program Files\Java\jdk-20.0.1
+//TODO
 ```
 
 * [ ] Update PATH environment variable
@@ -155,53 +142,39 @@ echo %PATH% > path.back
 
 ```
 [INPUT]
-//need to run cmder in admin mode
-setx /m PATH "%path%;%JAVA_HOME%
+//TODO
 
+[OUTPUT]
+//TODO
 ```
 
 * [ ] Check the variables settings
 
 ```
 [INPUT]
-java --version
+//TODO
 
 [OUTPUT]
-
+//TODO
 ```
 
 ## Build and test the project
 
 ```
 [INPUT]
-.\mvnw.cmd spring-boot:run
+//TODO
 
 [OUTPUT]
-[INFO] Attaching agents: []
-
-
-              |\      _,,,--,,_
-             /,`.-'`'   ._  \-;;,_
-  _______ __|,4-  ) )_   .;.(__`'-'__     ___ __    _ ___ _______
- |       | '---''(_/._)-'(_\_)   |   |   |   |  |  | |   |       |
- |    _  |    ___|_     _|       |   |   |   |   |_| |   |       | __ _ _
- |   |_| |   |___  |   | |       |   |   |   |       |   |       | \ \ \ \
- |    ___|    ___| |   | |      _|   |___|   |  _    |   |      _|  \ \ \ \
- |   |   |   |___  |   | |     |_|       |   | | |   |   |     |_    ) ) ) )
- |___|   |_______| |___| |_______|_______|___|_|  |__|___|_______|  / / / /
- ==================================================================/_/_/_/
-
-:: Built with Spring Boot :: 3.0.4
-
-[..]
-2023-04-30T22:11:03.600+02:00  INFO 34888 --- [  restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-
-[..]
-
+//TODO
 ```
+
 
 ### Result expected 
 
-<figure><img src="../../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+```
+[INPUT]
+//TODO
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+[OUTPUT]
+//TODO
+```
