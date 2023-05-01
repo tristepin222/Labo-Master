@@ -42,12 +42,13 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 * [ ] Which current compiler is installed (JDK) ?
 
-<pre><code><strong>[INPUT]
-</strong>javac --version
+```
+[INPUT]
+//TODO
 
 [OUTPUT]
-javac 20.0.1
-</code></pre>
+//TODO
+```
 
 * [ ] Which current runtime is installed (JRE) ?
 
@@ -73,9 +74,12 @@ javac 20.0.1
 * Then get the target url (cookies.
 {% endhint %}
 
-```powershell
-ps> Invoke-WebRequest "https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_windows-x64_bin.zip" ^
-    -OutFile "openjdk-20.0.1_windowsx64_bin.zip"
+```
+[INPUT]
+//TODO
+
+[OUTPUT]
+//TODO
 ```
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Powershell output during sdk download process</p></figcaption></figure>
