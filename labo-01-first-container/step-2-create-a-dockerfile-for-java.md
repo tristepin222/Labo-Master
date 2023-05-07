@@ -13,7 +13,6 @@
 
 [OUTPUT]
 //TODO
-
 ```
 
 * Using your IDE, add the following contents to the Dockerfile:
@@ -48,7 +47,7 @@ FROM eclipse-temurin:17-jdk-jammy
 WORKDIR /app
 ```
 
-* [ ] Before we can resolve dependencies with _MAVEN,_ we need to get the _MAVEN_ wrapper and our pom.xml file into our image.
+* [ ] Before we can resolve dependencies with _MAVEN,_ we need to get the _MAVEN_ wrapper and your pom.xml file into your image.
 
 ```
 COPY .mvn/ .mvn
@@ -94,16 +93,48 @@ To meet the good practice provided by Docker, we have to reduce the amount of da
 
 {% hint style="info" %}
 Best practices - docker tag naming convention:\
-Read carefully [this doc](https://docs.docker.com/develop/dev-best-practices/) and deduce the right tag for our image.
+Read carefully [this doc](https://docs.docker.com/develop/dev-best-practices/) and deduce the right tag for your image.\
+This [doc may also help you with tag samples](https://docs.docker.com/engine/reference/commandline/tag/).
 {% endhint %}
 
-* [ ] Find the best tag for our image
+* [ ] Find the best tag for your image (this image is not intended for publication.)
 
 ```
 //TODO
 ```
 
-* [ ] Build our first Docker image
+* [ ] Build your first Docker image
+
+Result Expected:
+
+```
+docker build --tag <yourTag>
+Sending build context to Docker daemon   9.92MB
+Step 1/7 : FROM eclipse-temurin:17-jdk-jammy
+ ---> 56c7bc12ee6d
+ ---> Using cache
+ ---> b4854585fa31
+Step 3/7 : COPY .mvn/ .mvn
+ ---> Using cache
+ ---> b72a055eb5f8
+Step 4/7 : COPY mvnw pom.xml ./
+ ---> Using cache
+ ---> ae3709e4bfb7
+Step 5/7 : RUN ./mvnw dependency:resolve
+ ---> Using cache
+ ---> e62d33f55785
+Step 6/7 : COPY src ./src
+ ---> Using cache
+ ---> b926a101aec1
+Step 7/7 : CMD ["./mvnw", "spring-boot:run"]
+ ---> Using cache
+ ---> 910e5f0c8b1f
+Successfully built 910e5f0c8b1f
+Successfully tagged java-docker:dev
+SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to dou
+ble check and reset permissions for sensitive files and directories.
+
+```
 
 ```
 [INPUT]
@@ -116,6 +147,16 @@ Read carefully [this doc](https://docs.docker.com/develop/dev-best-practices/) a
 ### View local images
 
 * [ ] Using the "docker images" command, observe your images, and the associates tag.
+
+Result expected:\
+
+
+```
+docker images
+REPOSITORY        TAG            IMAGE ID       CREATED          SIZE
+java-docker       <yourTag>      910e5f0c8b1f   11 minutes ago   606MB
+eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   3 days ago       456MB
+```
 
 ```
 [INPUT]
