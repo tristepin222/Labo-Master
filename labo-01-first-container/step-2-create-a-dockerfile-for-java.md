@@ -4,16 +4,10 @@
 
 ## Create your docker file
 
-* [ ] Change the directory to the app directory (we will use the same project [as for the previous step](step-1-run-the-project-outside-docker.md)).
-* [ ] Create an empty file named "Dockerfile"
+* [x] Change the directory to the app directory (we will use the same project [as for the previous step](step-1-run-the-project-outside-docker.md)).
+* [x] Create an empty file named "Dockerfile"
 
-```
-[INPUT]
-//TODO
 
-[OUTPUT]
-//TODO
-```
 
 * Using your IDE, add the following contents to the Dockerfile:
 
@@ -30,13 +24,13 @@ FROM eclipse-temurin:17-jdk-jammy
 * [Official documentation - Synthax directive](https://docs.docker.com/build/dockerfile/frontend/)
 
 ```
-//TODO
+This defines the location of the Dockerfile syntax that is used to build the Dockerfile
 ```
 
 * [ ] Is the docker image suitable for a production environment?
 
 ```
-//TODO
+No
 ```
 
 ### Dependencies resolution and first app build
@@ -63,19 +57,19 @@ RUN ./mvnw dependency:resolve
 * [ ] How is it possible to resolve the dependencies when the source code is not available at this point in the process?
 
 ```
-//TODO
+as long we have the file containing the list of dependencies. It's fine
 ```
 
 * Add the command able to provide (copy) your source code to the image.
 
 ```
-//TODO
+COPY src ./src
 ```
 
 * Add the command responsible to run your application inside the Docker.
 
 ```
-//TODO
+CMD ["./mvnw", "spring-boot:run"]
 ```
 
 ## Create a .dockerignore file
@@ -100,7 +94,7 @@ This [doc may also help you with tag samples](https://docs.docker.com/engine/ref
 * [ ] Find the best tag for your image (this image is not intended for publication.)
 
 ```
-//TODO
+java-docker
 ```
 
 * [ ] Build your first Docker image
