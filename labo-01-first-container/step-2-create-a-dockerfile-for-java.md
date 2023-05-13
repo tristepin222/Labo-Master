@@ -167,3 +167,26 @@ eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   3 days ago       456MB
 [OUTPUT]
 //TODO
 ```
+
+## Using tags
+
+* [ ] Using the appropriate command, try to obtain this situation on your local machine:
+
+```
+[INPUT]
+docker images
+
+[OUTPUT]
+REPOSITORY        TAG            IMAGE ID       CREATED       SIZE
+petclinic         dev            323bdb488603   2 hours ago   606MB
+petclinic         int            323bdb488603   2 hours ago   606MB
+petclinic         prod           323bdb488603   2 hours ago   606MB
+eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   9 days ago    456MB
+```
+
+* [ ] Is it a good idea to use tags like this to create different stages (dev, int, prod) ?
+
+```
+//TODO
+Explain
+```
