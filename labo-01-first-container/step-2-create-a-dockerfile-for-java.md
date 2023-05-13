@@ -18,16 +18,16 @@
 * Using your IDE, add the following contents to the Dockerfile:
 
 ```
-# synthax=docker/dockerfile:1
+# syntax=docker/dockerfile:1
 
 FROM eclipse-temurin:17-jdk-jammy
 ```
 
-* [ ] What is the purpose of the directive starting with "# synthax=docker..."
+* [ ] What is the purpose of the directive starting with "# syntax=docker..."
 
 <!---->
 
-* [Official documentation - Synthax directive](https://docs.docker.com/build/dockerfile/frontend/)
+* [Official documentation - Syntax directive](https://docs.docker.com/build/dockerfile/frontend/)
 
 ```
 //TODO
@@ -144,12 +144,11 @@ ble check and reset permissions for sensitive files and directories.
 //TODO
 ```
 
-### View local images
+## View local images
 
 * [ ] Using the "docker images" command, observe your images, and the associates tag.
 
-Result expected:\
-
+### Result expected: 
 
 ```
 docker images
@@ -157,6 +156,48 @@ REPOSITORY        TAG            IMAGE ID       CREATED          SIZE
 java-docker       <yourTag>      910e5f0c8b1f   11 minutes ago   606MB
 eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   3 days ago       456MB
 ```
+
+```
+[INPUT]
+//TODO
+
+[OUTPUT]
+//TODO
+```
+
+## \[Optional] Dealing with tag
+
+* [Official doc for rmi command](https://docs.docker.com/engine/reference/commandline/rmi/)
+
+<!---->
+
+* [ ] Add an additional tag to your image-id
+
+```
+[INPUT]
+//TODO
+
+[OUTPUT]
+//TODO
+```
+
+* [ ] Try to remove your image using the image-id
+
+```
+[INPUT]
+//TODO
+```
+
+```
+[OUTPUT]
+//You should get this kind of message
+
+Error: Conflict, cannot delete image <image-id> because it is tagged in multiple repositories, use -f to force
+2013/12/11 05:47:16 Error: failed to remove one or more images
+docker rmi test1:latest
+```
+
+* [ ] Fix this issue&#x20;
 
 ```
 [INPUT]
