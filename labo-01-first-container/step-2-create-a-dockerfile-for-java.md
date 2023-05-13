@@ -107,8 +107,11 @@ This [doc may also help you with tag samples](https://docs.docker.com/engine/ref
 
 Result Expected:
 
-```
-docker build --tag <yourTag>
+```docker
+[INPUT]
+docker build --tag <repository:tag>
+
+[OUTPUT]
 Sending build context to Docker daemon   9.92MB
 Step 1/7 : FROM eclipse-temurin:17-jdk-jammy
  ---> 56c7bc12ee6d
@@ -129,8 +132,8 @@ Step 6/7 : COPY src ./src
 Step 7/7 : CMD ["./mvnw", "spring-boot:run"]
  ---> Using cache
  ---> 910e5f0c8b1f
-Successfully built 910e5f0c8b1f
-Successfully tagged java-docker:dev
+Successfully built <yourImageId>
+Successfully tagged <yourRepository:yourTag>
 SECURITY WARNING: You are building a Docker image from Windows against a non-Windows Docker host. All files and directories added to build context will have '-rwxr-xr-x' permissions. It is recommended to dou
 ble check and reset permissions for sensitive files and directories.
 
@@ -146,58 +149,16 @@ ble check and reset permissions for sensitive files and directories.
 
 ## View local images
 
-* [ ] Using the "docker images" command, observe your images, and the associates tag.
+* [ ] Using the "docker images" command, observe your images, and the associated tag.
 
-### Result expected: 
+### Result expected:
 
 ```
 docker images
 REPOSITORY        TAG            IMAGE ID       CREATED          SIZE
-java-docker       <yourTag>      910e5f0c8b1f   11 minutes ago   606MB
+<yourRepository>  <yourTag>      910e5f0c8b1f   11 minutes ago   606MB
 eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   3 days ago       456MB
 ```
-
-```
-[INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
-```
-
-## \[Optional] Dealing with tag
-
-* [Official doc for rmi command](https://docs.docker.com/engine/reference/commandline/rmi/)
-
-<!---->
-
-* [ ] Add an additional tag to your image-id
-
-```
-[INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
-```
-
-* [ ] Try to remove your image using the image-id
-
-```
-[INPUT]
-//TODO
-```
-
-```
-[OUTPUT]
-//You should get this kind of message
-
-Error: Conflict, cannot delete image <image-id> because it is tagged in multiple repositories, use -f to force
-2013/12/11 05:47:16 Error: failed to remove one or more images
-docker rmi test1:latest
-```
-
-* [ ] Fix this issue&#x20;
 
 ```
 [INPUT]
