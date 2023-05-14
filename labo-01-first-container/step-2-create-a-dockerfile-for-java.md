@@ -208,3 +208,12 @@ REPOSITORY          TAG              IMAGE ID       CREATED        SIZE
 eclipse-petclinic   version1.0.dev   323bdb488603   18 hours ago   606MB
 eclipse-temurin     17-jdk-jammy     56c7bc12ee6d   10 days ago    456MB
 ```
+
+```
+[INPUT]
+//TODO
+
+[OUTPUT]
+//TODO
+```
+
