@@ -186,7 +186,25 @@ eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   9 days ago    456MB
 
 * [ ] Is it a good idea to use tags like this to create different stages (dev, int, prod) ?
 
+> The Docker tag helps maintain the build version to push the image to the Docker Hub**. The Docker Hub allows us to group images together based on name and tag.** Multiple Docker tags can point to a particular image. Basically, as in Git, Docker tags are similar to a specific commit. Docker tags are just an alias for an image ID.
+>
+> The tag's name must be an ASCII character string and may include lowercase and uppercase letters, digits, underscores, periods, and dashes. In addition, the tag names must not begin with a period or a dash, and they can only contain 128 characters.
+>
+> Source : [baeldung.com](https://www.baeldung.com/ops/docker-tag)
+
 ```
 //TODO
 Explain
+```
+
+* [ ] Using the appropriate command, update your local images and tags like this:
+
+```
+[INPUT]
+docker images
+
+[OUTPUT]
+REPOSITORY          TAG              IMAGE ID       CREATED        SIZE
+eclipse-petclinic   version1.0.dev   323bdb488603   18 hours ago   606MB
+eclipse-temurin     17-jdk-jammy     56c7bc12ee6d   10 days ago    456MB
 ```
