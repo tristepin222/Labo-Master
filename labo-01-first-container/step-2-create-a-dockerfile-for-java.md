@@ -133,13 +133,6 @@ ble check and reset permissions for sensitive files and directories.
 
 ```
 
-```
-[INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
-```
 
 ## View local images
 
@@ -156,10 +149,12 @@ eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   3 days ago       456MB
 
 ```
 [INPUT]
-//TODO
+docker images
 
 [OUTPUT]
-//TODO
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+java-docker   latest    b36e0daf3e9c   7 days ago     606MB
+redis         latest    3358aea34e8c   6 months ago   117MB
 ```
 
 ## Using tags
@@ -188,7 +183,7 @@ eclipse-temurin   17-jdk-jammy   56c7bc12ee6d   9 days ago    456MB
 
 ```
 //TODO
-Explain
+not really, prod and dev shouldn't be on the same machine, and dev should be a copy of prod that allows dev to do their stuff without impacting prod
 ```
 
 * [ ] Using the appropriate command, update your local images and tags like this:
@@ -205,9 +200,8 @@ eclipse-temurin     17-jdk-jammy     56c7bc12ee6d   10 days ago    456MB
 
 ```
 [INPUT]
-//TODO
+docker tag 323bdb488603 eclipse-petclinic:version1.0.dev
 
 [OUTPUT]
-//TODO
 ```
 
