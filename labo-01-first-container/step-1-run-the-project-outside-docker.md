@@ -10,7 +10,7 @@
 git clone https://github.com/spring-projects/spring-petclinic.git
 ```
 
-* Read carefully the readme file
+* Read the readme file carefully
 
 <!---->
 
@@ -40,9 +40,9 @@ git clone https://github.com/spring-projects/spring-petclinic.git
 
 ## Setup Java components
 
-### Check your current java installation
+### Check your current Java installation
 
-* [ ] Where is java installed ?
+* [ ] Where is Java installed?
 
 ```
 [INPUT]
@@ -65,6 +65,7 @@ not recognised
 * [ ] Which current runtime is installed (JRE) ?
 
 ```
+<<<<<<< HEAD
 [INPUT]
 java -version
 
@@ -82,14 +83,14 @@ it's an abstract virtual computer, it can be used, but not necessary
 
 ### Install the Open JDK
 
-* [Oracle Download Web Site](https://jdk.java.net/20/)
+* [Oracle Download WebSite](https://jdk.java.net/20/)
 
 {% hint style="info" %}
 * Accept the end user license before trying, then
-* Then get the target url (cookies.
+* Then get the target URL (cookies).
 {% endhint %}
 
-```
+```powershell
 [INPUT]
 curl "https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1_windows-x64_bin.zip" -O "openjdk-20.0.1_windowsx64_bin.zip"
 
@@ -97,15 +98,13 @@ curl "https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a
 none
 ```
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption><p>Powershell output during sdk download process</p></figcaption></figure>
-
 #### Check the archive integrity before installing the JDK
 
 * [Get the hash provided by Oracle](https://download.java.net/java/GA/jdk20.0.1/b4887098932d415489976708ad6d1a4b/9/GPL/openjdk-20.0.1\_windows-x64\_bin.zip.sha256)
 * Generate your local hash based on the archive downloaded ([help](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-filehash?view=powershell-7.3))
 * Compare both hashes...
 
-```
+```powershell
 [INPUT]
 Get-FileHash .\openjdk-20.0.1_windowsx64_bin.zip -Algorithm SHA256
 
@@ -123,9 +122,7 @@ tar -xf .\openjdk-20.0.1_windowsx64_bin.zip
 none
 ```
 
-<figure><img src="../../.gitbook/assets/image (4) (1).png" alt=""><figcaption><p>Powershell output during unzip process</p></figcaption></figure>
-
-#### Move the unzip folder to Progams Folder
+#### Move the unzip folder to Programs Folder
 
 ```
 [INPUT]
@@ -154,7 +151,7 @@ none
 * [ ] Update PATH environment variable
 
 {% hint style="info" %}
-Backup your current path before updating it.
+Back up your current path before updating it.
 
 echo %PATH% > path.back
 {% endhint %}
@@ -167,7 +164,7 @@ set PATH=%PATH%;%JAVA_HOME%
 none
 ```
 
-* [ ] Check the variables settings
+* [ ] Check the variables
 
 ```
 [INPUT]
@@ -199,13 +196,8 @@ java -version
 :: Built with Spring Boot :: 3.0.4
 ```
 
-
 ### Result expected 
 
-```
-[INPUT]
-//TODO
+<figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
 
-[OUTPUT]
-//TODO
-```
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
