@@ -16,7 +16,7 @@ Let's create both volumes, one for the data, and another one for the db config.
 
 ```
 [INPUT]
-//TODO
+docker volume create mysql_data
 
 [OUTPUT]
 mysql_data
@@ -26,7 +26,7 @@ mysql_data
 
 ```
 [INPUT]
-//TODO
+docker volume create mysql_config
 
 [OUTPUT]
 mysql_config
@@ -36,7 +36,7 @@ mysql_config
 
 ```
 [INPUT]
-//TODO
+docker volume ls
 
 [OUTPUT]
 DRIVER    VOLUME NAME
@@ -52,10 +52,10 @@ Let's create a user-defined bridge network enabling our application and our data
 
 ```
 [INPUT]
-//TODO
+docker network create petclinic
 
 [OUTPUT]
-//TODO
+df4e29fd8bf17be5a3fe25efb2778db9c1cf5c95bbeff30ec0447186a1efe667
 ```
 
 * [] List the networks
@@ -86,13 +86,16 @@ Check your host ports and do no try to forward one of them that is already is us
 
 ```
 [INPUT]
-docker run -it --rm -d -v mysql_data:/var/lib/mysql ^
-    -v mysql_config:/etc/mysql/conf.d ^
-    --network mysqlnet ^
-    --name mysqlserver ^
-    -e MYSQL_USER=petclinic -e MYSQL_PASSWORD=petclinic ^
-    -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=petclinic ^
-    -p 3316:3306 mysql:8.0
+docker run -it --rm -d 
+-v mysql_data:/var/lib/mysql 
+-v mysql_config:/etc/mysql/conf.d 
+--network petclinic 
+--name mysqlserver 
+-e MYSQL_USER=petclinic 
+-e MYSQL_PASSWORD=petclinic
+-e MYSQL_ROOT_PASSWORD=root 
+-e MYSQL_DATABASE=petclinic 
+-p 3316:3306 mysql:8.0
 
 [OUTPUT]
 Unable to find image 'mysql:8.0' locally
@@ -109,14 +112,14 @@ a564ada930a9: Waiting
 a11a06843fd5: Waiting
 92f6d4aa041d: Waiting
 [...]
-2b7afc93c37d715c6d592de78173386903e123d0c7065ac34329ab81e9fcefd8
+46288402da23e920da1a349d08d2668458da121ab33ebcd40b50d584fa262b63
 ```
 
 * [] List all containers (all states)
 
 ```
 [INPUT]
-//TODO
+docker ps
 
 [OUTPUT]
 //Result expected
@@ -138,11 +141,15 @@ CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=mysql"]
 * [] If you run both docker, the application server will not able to talk with the dbserver... any idea why ?
 
 ```
-//TODO - Explaination
+They're not on the same network 
 ```
 
 ```
-//TODO - Config update
+docker run --rm -d \
+--name springboot-server \
+--network mysqlnet \
+-e MYSQL_URL=jdbc:mysql://mysqlserver/petclinic \
+-p 8080:8080 java-docker
 ```
 
 * [] Let's build our image

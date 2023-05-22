@@ -34,10 +34,11 @@ curl --request GET ^
 
 ```
 [INPUT]
-//TODO
+docker ps
 
 [OUTPUT]
-//TODO
+CONTAINER ID   IMAGE         COMMAND                  CREATED      STATUS         PORTS                    NAMES
+fdd6a64e10ab   java-docker   "./mvnw spring-boot:…"   7 days ago   Up 3 minutes   0.0.0.0:8080->8080/tcp   bald_eagle
 
 ```
 
@@ -45,10 +46,10 @@ curl --request GET ^
 
 ```
 [INPUT]
-//TODO
+docker stop fdd6a64e10ab
 
 [OUTPUT]
-//TODO
+fdd6a64e10ab
 ```
 
 * [ ] Rename your docker as "petclinic-app"
@@ -59,20 +60,17 @@ curl --request GET ^
 
 ```
 [INPUT]
-//TODO
-
-[OUTPUT]
-//TODO
+docker rename fdd6a64e10ab petclinic-app
 ```
 
 * [ ] Restart your docker using the new name
 
 ```
 [INPUT]
-//TODO
+docker start petclinic-app
 
 [OUTPUT]
-//TODO
+petclinic-app
 ```
 
 * [ ] Display all running dockers with this output format
@@ -90,9 +88,9 @@ eclipse-petclinic:version1.0.dev   0.0.0.0:80->8080/tcp.   petclinic-server
 
 ```
 [INPUT]
-//TODO
-
+docker container ls --format "table {{.Image}}\t{{.Ports}}\t{{.Names}}"
 [OUTPUT]
-//TODO
+IMAGE         PORTS                    NAMES
+java-docker   0.0.0.0:8080->8080/tcp   petclinic-app
 ```
 
