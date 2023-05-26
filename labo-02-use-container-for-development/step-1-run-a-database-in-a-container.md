@@ -141,9 +141,11 @@ CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=mysql"]
 * [] If you run both docker, the application server will not able to talk with the dbserver... any idea why ?
 
 ```
-They're not on the same network 
+We need to configure the application to use our custom port and it's also not connected to our network
 ```
-
+```
+CMD ["./mvnw", "spring-boot:run", "-Dspring-boot.run.profiles=mysql", "-Dserver.port=3316"]
+```
 ```
 docker run --rm -d \
 --name springboot-server \
@@ -186,3 +188,4 @@ curl --request GET ^
 ```
 
 * [] Result expected
+the project works as expected
